@@ -1,0 +1,49 @@
+{
+  "train_cutoffs": [
+    "2024-10-01",
+    "2025-01-01",
+    "2025-04-01"
+  ],
+  "test_cutoff": "2025-10-01",
+  "horizon_days": 90,
+  "train_rows": 6848,
+  "test_rows": 2931,
+  "train_churn_rate": 0.7086740654205608,
+  "test_churn_rate": 0.6666666666666666,
+  "best_model": "logistic_regression",
+  "auc_gain_over_recency_baseline": {
+    "estimate": 0.03411604047650707,
+    "ci95_low": 0.024786622728415936,
+    "ci95_high": 0.04277693892262525
+  },
+  "metrics": {
+    "recency_only": {
+      "roc_auc": 0.7949038216754023,
+      "pr_auc": 0.8827732413465033,
+      "brier": 0.1747068647525971,
+      "lift_top_10pct": 1.4334470989761092,
+      "lift_top_20pct": 1.4334470989761092
+    },
+    "logistic_regression": {
+      "roc_auc": 0.8290198621519094,
+      "pr_auc": 0.8982773560889842,
+      "brier": 0.15843567320442745,
+      "lift_top_10pct": 1.453924914675768,
+      "lift_top_20pct": 1.4129692832764507
+    },
+    "random_forest": {
+      "roc_auc": 0.8248575999262464,
+      "pr_auc": 0.89300699652794,
+      "brier": 0.15950457637052576,
+      "lift_top_10pct": 1.4385665529010239,
+      "lift_top_20pct": 1.4129692832764507
+    },
+    "gradient_boosting": {
+      "roc_auc": 0.8220695756755425,
+      "pr_auc": 0.8916300704718615,
+      "brier": 0.1599520191095128,
+      "lift_top_10pct": 1.4283276450511946,
+      "lift_top_20pct": 1.4078498293515358
+    }
+  }
+}

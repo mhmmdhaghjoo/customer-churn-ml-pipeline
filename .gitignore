@@ -1,0 +1,9 @@
+data/
+reports/best_model.joblib
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+build/
