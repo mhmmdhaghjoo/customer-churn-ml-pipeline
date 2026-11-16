@@ -118,6 +118,18 @@ custom exception for invalid input with a non-zero exit code, pytest unit
 tests with hand-calculated expectations plus an end-to-end test, and GitHub
 Actions running lint and tests on Python 3.10 and 3.12.
 
+## Related projects
+
+This is one of three projects built around the same simulated online shop:
+
+- [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse): the data warehouse: raw exports to a tested star schema and business analyses in SQL
+- **Customer Churn ML Pipeline** (this repository): the predictive model: churn prediction as a tested Python package
+- [Text-to-SQL Assistant](https://github.com/mhmmdhaghjoo/text-to-sql-assistant): the natural-language interface: LLM-written SQL with a read-only guard and an evaluation set
+
+More about me: [github.com/mhmmdhaghjoo](https://github.com/mhmmdhaghjoo)
+
 ## Licence
 
 MIT
+
+Author: Mohammad Haghjoo
