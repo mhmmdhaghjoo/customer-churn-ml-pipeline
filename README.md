@@ -1,5 +1,7 @@
 # Customer Churn ML Pipeline
 
+[![ci](https://github.com/mhmmdhaghjoo/customer-churn-ml-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/mhmmdhaghjoo/customer-churn-ml-pipeline/actions/workflows/ci.yml)
+
 Which customers of an online shop will not order again in the next 90 days?
 This project answers that with a tested, installable Python package instead of
 a notebook: data validation, leakage-safe feature snapshots, hypothesis tests,
