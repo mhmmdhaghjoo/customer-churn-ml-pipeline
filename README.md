@@ -10,13 +10,12 @@ all behind one command.
 
 ![Churn rate per risk decile](reports/figures/deciles.png)
 
-> **Online shop case series.** One simulated shop, three questions in order:
+> **Online shop case series.** One simulated shop, two questions in order:
 >
 > | Step | Question | Project |
 > |---|---|---|
 > | 1 | Can the shop's data be trusted, and which customers come back? | [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse) |
 > | 2 | Which customers will stop buying in the next 90 days? | **Customer Churn ML Pipeline** (this repository) |
-> | 3 | Can a manager query the same data in plain English, safely? | [Text-to-SQL Assistant](https://github.com/mhmmdhaghjoo/text-to-sql-assistant) |
 
 ## Result in short
 
@@ -128,11 +127,10 @@ Actions running lint and tests on Python 3.10 and 3.12.
 
 ## Related projects
 
-This is one of three projects built around the same simulated online shop:
+This is one of two projects built around the same simulated online shop:
 
 - [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse): the data warehouse: raw exports to a tested star schema and business analyses in SQL
 - **Customer Churn ML Pipeline** (this repository): the predictive model: churn prediction as a tested Python package
-- [Text-to-SQL Assistant](https://github.com/mhmmdhaghjoo/text-to-sql-assistant): the natural-language interface: LLM-written SQL with a read-only guard and an evaluation set
 
 More projects:
 
