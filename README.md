@@ -10,6 +10,14 @@ all behind one command.
 
 ![Churn rate per risk decile](reports/figures/deciles.png)
 
+> **Online shop case series.** One simulated shop, three questions in order:
+>
+> | Step | Question | Project |
+> |---|---|---|
+> | 1 | Can the shop's data be trusted, and which customers come back? | [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse) |
+> | 2 | Which customers will stop buying in the next 90 days? | **Customer Churn ML Pipeline** (this repository) |
+> | 3 | Can a manager query the same data in plain English, safely? | [Text-to-SQL Assistant](https://github.com/mhmmdhaghjoo/text-to-sql-assistant) |
+
 ## Result in short
 
 Trained on three earlier snapshots (October 2024 to April 2025) and tested on
@@ -126,11 +134,13 @@ This is one of three projects built around the same simulated online shop:
 - **Customer Churn ML Pipeline** (this repository): the predictive model: churn prediction as a tested Python package
 - [Text-to-SQL Assistant](https://github.com/mhmmdhaghjoo/text-to-sql-assistant): the natural-language interface: LLM-written SQL with a read-only guard and an evaluation set
 
-Two more projects:
+More projects:
 
 - [Checkout A/B Test (R)](https://github.com/mhmmdhaghjoo/checkout-ab-test-r): an A/B test of a new checkout in R, from power analysis to a Bayesian rollout recommendation
 
-- [Employee Turnover Analytics](https://github.com/mhmmdhaghjoo/employee-turnover-analytics): people analytics on ten years of HR records, with survival analysis, risk models and a fairness audit
+- [Employee Turnover Analytics](https://github.com/mhmmdhaghjoo/employee-turnover-analytics): people analytics on a public practice HR dataset (ten years, likely simulated), with survival analysis, risk models and a fairness audit
+
+- [Delivery Performance Analytics](https://github.com/mhmmdhaghjoo/delivery-performance-analytics): is the delivery promise kept? real marketplace data and tested KPIs for logistics (Power BI dashboard in progress)
 
 More about me: [mhmmdhaghjoo.github.io](https://mhmmdhaghjoo.github.io) and [github.com/mhmmdhaghjoo](https://github.com/mhmmdhaghjoo)
 
