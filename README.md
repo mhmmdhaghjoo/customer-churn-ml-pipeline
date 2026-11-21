@@ -71,6 +71,7 @@ simulate ─▶ validate ─▶ snapshots ─▶ hypothesis tests ─▶ segment
 | `churn/model.py` | scikit-learn pipelines with imputation, scaling and encoding inside the pipeline |
 | `churn/evaluate.py` | ROC AUC, PR AUC, Brier score, lift, decile table, bootstrap comparison of two models |
 | `churn/pipeline.py` | Orchestrates the run and writes every artefact |
+| `churn/decision.py` | Thresholds, campaign value under stated assumptions, break-even probability, calibration table |
 | `churn/cli.py` | `churn simulate` and `churn run` |
 
 ### Design decisions
@@ -108,7 +109,7 @@ Requires Python 3.10 or later.
 pip install -e ".[dev]"
 make data     # churn simulate --out data/raw --seed 42
 make run      # churn run  ->  reports/
-make test     # 20 tests
+make test     # 31 tests (the app smoke test needs `make data run` and the app extra)
 make lint     # ruff + mypy
 ```
 
@@ -116,6 +117,39 @@ All tables behind the numbers above are in `reports/` (`model_comparison.csv`,
 `deciles.csv`, `feature_importance.csv`, `segments.csv`, `tests_numeric.csv`,
 `tests_categorical.csv`, `metrics.json`). Results come from seed 42; other
 library versions can shift them slightly.
+
+## Decision simulator (Streamlit)
+
+![Decision simulator, default assumptions](reports/figures/app_decision.png)
+
+A ranked list is not yet a decision. `app/streamlit_app.py` turns the scores
+into one: pick a threshold, enter what a contact costs, what a retained
+customer is worth and what share of contacted churners an offer keeps, and
+see how many customers are contacted, how many of them really churn, and
+the net value.
+
+```bash
+pip install -e ".[app]"
+make data run   # the app scores the October 2025 test snapshot with the saved model
+make app        # streamlit run app/streamlit_app.py
+```
+
+- **Two net values, side by side.** "Expected" uses the model's
+  probabilities, which is all a planner has before a campaign. "Backtest"
+  uses the churn that actually followed. The gap is the cost of the
+  calibration problem described above, in euros.
+- **The euro figures are assumptions, not results.** The model predicts who
+  is likely to leave, not who an offer would keep. The save rate has to come
+  from an experiment with a hold-out group.
+- **Calibration tab:** predicted against observed churn per score bin with
+  Wilson intervals.
+- **Segments tab:** risk, observed churn and contacts per K-Means cluster.
+- The logic lives in `churn/decision.py` and is unit-tested with
+  hand-calculated cases (`tests/test_decision.py`); the app is a thin layer
+  on top, with a smoke test that renders it (`tests/test_app.py`, skipped
+  when the data has not been generated).
+
+Runs locally only; it is not deployed.
 
 ## Engineering practices
 

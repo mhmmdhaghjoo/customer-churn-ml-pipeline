@@ -1,4 +1,4 @@
-.PHONY: install data run test lint all
+.PHONY: install data run test lint app all
 
 install:
 	pip install -e ".[dev]"
@@ -16,5 +16,8 @@ lint:
 	ruff check .
 	ruff format --check .
 	mypy src
+
+app:
+	streamlit run app/streamlit_app.py
 
 all: lint test data run
